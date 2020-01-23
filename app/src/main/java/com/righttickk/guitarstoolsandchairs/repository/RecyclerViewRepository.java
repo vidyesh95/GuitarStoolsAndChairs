@@ -1,6 +1,7 @@
 package com.righttickk.guitarstoolsandchairs.repository;
 
 import android.app.Application;
+import android.os.AsyncTask;
 
 import androidx.lifecycle.LiveData;
 
@@ -20,5 +21,47 @@ public class RecyclerViewRepository {
         RecyclerDatabase database = RecyclerDatabase.getInstance(application);
         recyclerDao = database.recyclerDao();
         allRecyclerViewItems = recyclerDao.getAllRecyclerViewItems();
+    }
+
+    public void insert(RecyclerViewItem recyclerViewItem) {
+        new InsertRecyclerViewItemAsyncTask(recyclerDao).execute(recyclerViewItem);
+    }
+
+    public void update(RecyclerViewItem recyclerViewItem) {
+        new UpdateRecyclerViewItemAsyncTask(recyclerDao).execute(recyclerViewItem);
+    }
+
+    public LiveData<List<RecyclerViewItem>> getAllRecyclerViewItems() {
+        return allRecyclerViewItems;
+    }
+
+    private static class InsertRecyclerViewItemAsyncTask extends AsyncTask<RecyclerViewItem, Void, Void> {
+
+        private RecyclerDao recyclerDao;
+
+        private InsertRecyclerViewItemAsyncTask(RecyclerDao recyclerDao) {
+            this.recyclerDao = recyclerDao;
+        }
+
+        @Override
+        protected Void doInBackground(RecyclerViewItem... recyclerViewItems) {
+            recyclerDao.insert(recyclerViewItems[0]);
+            return null;
+        }
+    }
+
+    private static class UpdateRecyclerViewItemAsyncTask extends AsyncTask<RecyclerViewItem, Void, Void> {
+
+        private RecyclerDao recyclerDao;
+
+        private UpdateRecyclerViewItemAsyncTask(RecyclerDao recyclerDao) {
+            this.recyclerDao = recyclerDao;
+        }
+
+        @Override
+        protected Void doInBackground(RecyclerViewItem... recyclerViewItems) {
+            recyclerDao.update(recyclerViewItems[0]);
+            return null;
+        }
     }
 }
