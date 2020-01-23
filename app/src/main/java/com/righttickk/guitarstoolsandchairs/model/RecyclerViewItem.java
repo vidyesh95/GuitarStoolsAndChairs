@@ -1,6 +1,13 @@
 package com.righttickk.guitarstoolsandchairs.model;
 
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
+@Entity(tableName = "recycler_table")
 public class RecyclerViewItem {
+
+    @PrimaryKey(autoGenerate = true)
+    private int id;
     private int mImageResource;
     private String mText1;
     private String mText2;
@@ -11,6 +18,10 @@ public class RecyclerViewItem {
         mText1 = text1;
         mText2 = text2;
         mText3 = text3;
+    }
+
+    public int getId() {
+        return id;
     }
 
     public int getImageResource() {
