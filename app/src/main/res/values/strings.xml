@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">Guitar Stools And Chairs</string>
+    <string name="title_more">More</string>
+    <string name="title_home">Home</string>
+    <string name="title_wish_list">Wish List</string>
+
+    <string name="app_heading">Guitar Stools &amp; Chairs</string>
+
+    <string name="ask_the_expert">Ask the Expert</string>
+    <string name="text_view_4_more">Got a specification, delivery or order related query?
+        \nAsk us and get an in-depth and personalized consultation for your purchase.</string>
+    <string name="whats_app">WHATS APP</string>
+    <string name="e_mail">E-MAIL</string>
+    <string name="feedback">Feedback</string>
+    <string name="others">Others</string>
+    <string name="contact_us">Contact us</string>
+    <string name="rate_on_google_play">Rate on Google Play</string>
+    <string name="share_app">Share app</string>
+    <string name="privacy_policy">Privacy Policy</string>
+    <string name="disclaimer">Disclaimer</string>
+    <string name="chooser_title_privacy">Choose Share Client</string>
+
+    <string name="line_1">On-Stage DT7500 Guitarist Stool</string>
+    <string name="line_2">₹2,699</string>
+    <string name="line_3">Bajaao.com</string>
+</resources>
