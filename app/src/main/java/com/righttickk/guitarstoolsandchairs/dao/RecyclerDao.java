@@ -10,6 +10,7 @@ import com.righttickk.guitarstoolsandchairs.model.RecyclerViewItem;
 
 import java.util.List;
 
+// Data Access Objects
 @Dao
 public interface RecyclerDao {
 

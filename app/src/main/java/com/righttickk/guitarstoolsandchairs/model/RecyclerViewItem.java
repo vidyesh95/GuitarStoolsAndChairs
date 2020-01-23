@@ -20,6 +20,11 @@ public class RecyclerViewItem {
         mText3 = text3;
     }
 
+    // Get/Set field values
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public int getId() {
         return id;
     }
