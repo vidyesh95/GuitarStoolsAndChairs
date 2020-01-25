@@ -79,7 +79,7 @@ public class HomeFragment extends Fragment {
         });
 
         // Optional
-        new ItemTouchHelper(new ItemTouchHelper
+        /*new ItemTouchHelper(new ItemTouchHelper
                 .SimpleCallback(0, ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT) {
             @Override
             public boolean onMove(@NonNull RecyclerView recyclerView,
@@ -92,7 +92,7 @@ public class HomeFragment extends Fragment {
             public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
                 homeViewModel.delete(adapter.getRecyclerViewItemAt(viewHolder.getAdapterPosition()));
             }
-        }).attachToRecyclerView(recyclerView);
+        }).attachToRecyclerView(recyclerView);*/
 
         adapter.setOnItemClickListener(new RecyclerViewAdapter.OnItemClickListener() {
             @Override
