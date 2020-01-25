@@ -102,8 +102,12 @@ public class HomeFragment extends Fragment {
                     Intent browserIntent = new Intent(Intent.ACTION_VIEW);
                     browserIntent.setData(Uri.parse(url));
                     startActivity(browserIntent);
-                } else if (recyclerViewItem.getText1() != null) {
-                    String url = "https://www.google.com/#q=" + recyclerViewItem.getText1();
+                }
+                // Not working
+                else if (recyclerViewItem.getText1() != null) {
+                    String GOOGLE_SEARCH_URL = "http://www.google.com/#q=";
+                    String searchKey = recyclerViewItem.getText1().trim();
+                    String url = GOOGLE_SEARCH_URL + searchKey;
                     Intent browserIntent = new Intent(Intent.ACTION_VIEW);
                     browserIntent.setData(Uri.parse(url));
                     startActivity(browserIntent);
