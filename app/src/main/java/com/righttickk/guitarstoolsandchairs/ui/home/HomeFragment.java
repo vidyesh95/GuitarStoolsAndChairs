@@ -21,15 +21,13 @@ import com.righttickk.guitarstoolsandchairs.R;
 import com.righttickk.guitarstoolsandchairs.adapter.RecyclerViewAdapter;
 import com.righttickk.guitarstoolsandchairs.model.RecyclerViewItem;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class HomeFragment extends Fragment {
 
+    public static final int URL_REQUEST = 1;
+
     private HomeViewModel homeViewModel;
-    //private RecyclerView mRecyclerView;
-    private RecyclerView.Adapter mAdapter;
-    private RecyclerView.LayoutManager mLayoutManager;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -63,14 +61,6 @@ public class HomeFragment extends Fragment {
                 }
             }
         });
-
-
-        /*homeViewModel.getRecyclerViewList.observe(this, new Observer<ArrayList<RecyclerViewItem>>() {
-            @Override
-            public void onChanged(ArrayList<RecyclerViewItem> recyclerViewItems) {
-                mAdapter.notifyDataSetChanged();
-            }
-        });*/
 
         // RecyclerView
         RecyclerView recyclerView = root.findViewById(R.id.recycler_view);

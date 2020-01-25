@@ -4,6 +4,7 @@ import android.app.Application;
 import android.os.AsyncTask;
 
 import androidx.lifecycle.LiveData;
+import androidx.lifecycle.MutableLiveData;
 
 import com.righttickk.guitarstoolsandchairs.dao.RecyclerDao;
 import com.righttickk.guitarstoolsandchairs.database.RecyclerDatabase;
@@ -14,7 +15,6 @@ import java.util.List;
 public class RecyclerViewRepository {
 
     private RecyclerDao recyclerDao;
-
     private LiveData<List<RecyclerViewItem>> allRecyclerViewItems;
 
     public RecyclerViewRepository(Application application) {
