@@ -31,6 +31,17 @@ public class RecyclerViewRepository {
         new UpdateRecyclerViewItemAsyncTask(recyclerDao).execute(recyclerViewItem);
     }
 
+    // Optional
+    public void delete(RecyclerViewItem recyclerViewItem) {
+        new DeleteRecyclerViewItemAsyncTask(recyclerDao).execute(recyclerViewItem);
+    }
+
+    // Optional
+    public void deleteAllRecyclerViewItems() {
+        new DeleteAllRecyclerViewItemsAsyncTask(recyclerDao).execute();
+    }
+
+
     public LiveData<List<RecyclerViewItem>> getAllRecyclerViewItems() {
         return allRecyclerViewItems;
     }
@@ -61,6 +72,38 @@ public class RecyclerViewRepository {
         @Override
         protected Void doInBackground(RecyclerViewItem... recyclerViewItems) {
             recyclerDao.update(recyclerViewItems[0]);
+            return null;
+        }
+    }
+
+    // Optional
+    private static class DeleteRecyclerViewItemAsyncTask extends AsyncTask<RecyclerViewItem, Void, Void> {
+
+        private RecyclerDao recyclerDao;
+
+        private DeleteRecyclerViewItemAsyncTask(RecyclerDao recyclerDao) {
+            this.recyclerDao = recyclerDao;
+        }
+
+        @Override
+        protected Void doInBackground(RecyclerViewItem... recyclerViewItems) {
+            recyclerDao.delete(recyclerViewItems[0]);
+            return null;
+        }
+    }
+
+    // Optional
+    private static class DeleteAllRecyclerViewItemsAsyncTask extends AsyncTask<RecyclerViewItem, Void, Void> {
+
+        private RecyclerDao recyclerDao;
+
+        private DeleteAllRecyclerViewItemsAsyncTask(RecyclerDao recyclerDao) {
+            this.recyclerDao = recyclerDao;
+        }
+
+        @Override
+        protected Void doInBackground(RecyclerViewItem... recyclerViewItems) {
+            recyclerDao.deleteAllRecyclerViewItems();
             return null;
         }
     }

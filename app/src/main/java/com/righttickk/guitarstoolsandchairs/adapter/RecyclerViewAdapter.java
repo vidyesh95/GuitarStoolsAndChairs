@@ -37,7 +37,8 @@ public class RecyclerViewAdapter extends
             return oldItem.getImageResource()==newItem.getImageResource() &&
                     oldItem.getText1().equals(newItem.getText1()) &&
                     oldItem.getText2().equals(newItem.getText2()) &&
-                    oldItem.getText3().equals(newItem.getText3());
+                    oldItem.getText3().equals(newItem.getText3()) &&
+                    oldItem.getText4().equals(newItem.getText4());
         }
     };
 
@@ -60,6 +61,7 @@ public class RecyclerViewAdapter extends
         holder.mTextView3.setText(currentItem.getText3());
     }
 
+    // Optional
     public RecyclerViewItem getRecyclerViewItemAt(int position) {
         return getItem(position);
     }

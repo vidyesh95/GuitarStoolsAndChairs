@@ -12,12 +12,14 @@ public class RecyclerViewItem {
     private String mText1;
     private String mText2;
     private String mText3;
+    private String mText4;
 
-    public RecyclerViewItem(int imageResource, String text1, String text2, String text3) {
+    public RecyclerViewItem(int imageResource, String text1, String text2, String text3, String text4) {
         mImageResource = imageResource;
         mText1 = text1;
         mText2 = text2;
         mText3 = text3;
+        mText4 = text4;
     }
 
     // Get/Set field values
@@ -43,5 +45,9 @@ public class RecyclerViewItem {
 
     public String getText3() {
         return mText3;
+    }
+
+    public String getText4() {
+        return mText4;
     }
 }
