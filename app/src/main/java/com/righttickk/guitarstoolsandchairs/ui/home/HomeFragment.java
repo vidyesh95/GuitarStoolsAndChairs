@@ -31,8 +31,8 @@ public class HomeFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        homeViewModel =
-                ViewModelProviders.of(this).get(HomeViewModel.class);
+        //homeViewModel = ViewModelProviders.of(this).get(HomeViewModel.class);
+        homeViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
 
         // Change theme according to AppBarLayout State
@@ -70,8 +70,10 @@ public class HomeFragment extends Fragment {
         final RecyclerViewAdapter adapter = new RecyclerViewAdapter();
         recyclerView.setAdapter(adapter);
 
-        homeViewModel = ViewModelProviders.of(this).get(HomeViewModel.class);
-        homeViewModel.getAllRecyclerViewItems().observe(this, new Observer<List<RecyclerViewItem>>() {
+        //homeViewModel = ViewModelProviders.of(this).get(HomeViewModel.class);
+        //homeViewModel.getAllRecyclerViewItems().observe(this, new Observer<List<RecyclerViewItem>>() {
+        homeViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
+        homeViewModel.getAllRecyclerViewItems().observe(getViewLifecycleOwner(), new Observer<List<RecyclerViewItem>>() {
             @Override
             public void onChanged(List<RecyclerViewItem> recyclerViewItems) {
                 adapter.submitList(recyclerViewItems);
